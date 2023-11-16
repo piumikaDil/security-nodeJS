@@ -13,6 +13,7 @@ app.get("/", async (req, res, next) => {
 })
 
 app.use("/auth",AuthRoute)
+app.use(morgan('dev'))
 
 app.use(async(req,res,next)=>{
     next(creatError(404,"Not Found"))
